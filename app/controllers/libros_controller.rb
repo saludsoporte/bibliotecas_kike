@@ -12,6 +12,7 @@ class LibrosController < ApplicationController
   def edit
   end
 
+  #primer commi
   
   def new
     @hash_n_libro = Libro.new
