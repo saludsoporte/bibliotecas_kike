@@ -1,0 +1,56 @@
+
+<h1>Bibliotecas#rosca</h1>
+<p>Find me in app/views/bibliotecas/index.html.erb</p>
+
+ 
+
+<style>
+ .table{
+   width : 80%;
+   margin: auto;
+
+ }
+</style>
+
+
+
+<table class='table table-striped'  >
+<thead>
+  <tr>
+  <td>Nombre
+  </td>
+   <td>direccion
+  </td>
+   <td colspan='2'>acciones
+  </td>
+  </tr>
+
+</thead>
+ 
+ <tbody>
+ <% @hash_i.each do |i| %>
+  <tr>
+    <td><%= i.nombre%></td>  
+    <td><%= i.direccion%></td>
+    <td><%= link_to 'Editar', edit_biblioteca_path(i.id), data: {:confirm => "Edicion de la biblioteca \r #{i.nombre}"} %></td>
+    <td><%= link_to 'Eliminar',    biblioteca_path(i.id), data: {:confirm => "Borrar Registro \r #{i.nombre}", method: :delete} %></td>
+  </tr>
+<% end %>
+
+</tbody>
+
+</table>
+
+
+
+<%= link_to 'nueva  blibioteca', new_biblioteca_path %>
+<br>
+<%= link_to 'nuevo libro', new_libro_path %>
+<br>
+<%= link_to 'nueva Relacion', new_relacion_libro_path %>
+<br>
+<%= link_to 'Nuevo Autor', new_autor_path %>
+<br>
+<%= link_to 'Nuevo ediroeial', new_editorial_path %>
+
+<%= link_to "Cerrar sesi&oacuten", destroy_user_session_path, method: :delete%>

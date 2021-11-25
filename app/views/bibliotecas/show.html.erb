@@ -1,0 +1,46 @@
+<h1>Bibliotecas# especificando un solo registro</h1>
+<p>Find me in app/views/bibliotecas/index.html.erb</p>
+
+ 
+
+<style>
+ .table{
+   width : 80%;
+   margin: auto;
+
+ }
+</style>
+
+
+
+<table class='table table-striped'  >
+<thead>
+  <tr>
+  <td>Nombre
+  </td>
+   <td>direccion
+  </td>
+   <td colspan='2'>acciones
+  </td>
+  </tr>
+
+</thead>
+ 
+ <tbody>
+ <% @has_biblioteca_libros.each do |i| %>
+  <tr>
+    <td><%= i.biblioteca.nombre%></td>  
+    <td><%= i.libro.titulo%></td>
+   
+  </tr>
+<% end %>
+
+</tbody>
+
+</table>
+
+
+
+<%= link_to 'nueva  blibioteca', new_biblioteca_path %>
+<%= link_to 'nuevo libro', new_libro_path %>
+<%= link_to 'nueva Relacion', new_relacion_libro_path %>

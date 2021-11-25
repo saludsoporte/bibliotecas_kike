@@ -1,0 +1,12 @@
+<h1>Fomulario para editar</h1>
+<p>Find me in app/views/bibliotecas/edit.html.erb</p>
+
+<%= form_for (@id_biblioteca) do |f| %>
+    <p>Nombre</p>
+    <%= f.text_field :nombre %>
+    <p>Direccion</p>
+    <%= f.text_field :direccion %>
+<br><br><br>
+ <%= f.submit "Guardar Biblioteca Nueva"%>
+
+<% end %>

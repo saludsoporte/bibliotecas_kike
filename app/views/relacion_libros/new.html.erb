@@ -1,0 +1,19 @@
+
+<h1>Folrmulario de relaciond de librios</h1>
+
+
+<%= form_for(@hash_n_relecion ) do |r| %>
+    <p>biblioteca</p>
+   <%= r.select(:biblioteca_id ,"", {},{}) do %>  <br><br>
+    <%= options_from_collection_for_select(@var_id_b, :id, :nombre )%>
+    <%end%>
+
+   <p>libroo</p>
+   <%= r.select(:libro_id ,"", {},{}) do %>  <br><br>
+    <%= options_from_collection_for_select(@var_id_l, :id, :titulo )%>
+    <%end%>
+
+
+ <%= r.submit "Guardar"%>
+
+<% end %>
